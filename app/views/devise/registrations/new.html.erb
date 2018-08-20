@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <body>
+<div class="wrapper">
+<div class="logo"><a href="index"><image src="/logo_a.png" class="main"></image></a></div>
+<ul class="tnb">
+  <li class="log">
+     <% if user_signed_in? %>
+     <%= link_to "Logout", destroy_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% else %>
+    <%= link_to "Login", new_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% end %>
+    </li>
+</ul>
+</div>
+
+<!--상단바-->
+     <ul class="nav">
+       <div class="menu">
+        <li><a class="active" href="beer">Beer</a></li>
+        <li><a href="brewery">Brewery</a></li>
+        <li><a href="#contact">Communication</a></li>
+        
+        <li class="dropdown">
+    <a href="mypage" class="dropbtn">My Page</a>
+    <div class="dropdown-content">
+      <a href="beertap" style="color:black;">Beer Tap</a>
+      <a href="mywriting" style="color:black;">작성글</a>
+      <a href="#" style="color:black;">스크랩</a>
+      <a href="mypage" style="color:black;">info</a>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+<div class="bodywrapper">
+<div class="container">
+    <div class="align">
+  <image id="icon" src="/beer.png" align="center"></image>
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, placeholder: "  Your Name", class: "input" %>
+  </div>
+  
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "  Email Adress", class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "off", placeholder: "  Password", class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "  Password Confirmation", class:"input" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+  </div>
+  <br>
+  <div class="button">
+  <%= link_to "Login", new_user_session_path, style:"font: 400 13.3333px Arial; text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+  </div>
+<% end %>
+
+
+</div>
+</div>
+</div>
+<div class="footer">ⓒ 2018  Beer SNS</div>
+</body>
+</html>

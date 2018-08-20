@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <body>
+<div class="wrapper">
+<div class="logo"><a href="/index"><image src="/logo_a.png" class="main"></image></a></div>
+<ul class="tnb">
+  <li class="log">
+     <% if user_signed_in? %>
+     <%= link_to "Logout", destroy_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% else %>
+    <%= link_to "Login", new_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% end %>
+    </li>
+</ul>
+</div>
+
+<!--상단바-->
+     <ul class="nav">
+       <div class="menu">
+        <li><a class="active" href="/beer">Beer</a></li>
+        <li><a href="/brewery">Brewery</a></li>
+        <li><a href="#contact">Community</a></li>
+        
+        <li class="dropdown">
+    <a href="/mypage" class="dropbtn">My Page</a>
+    <div class="dropdown-content">
+      <a href="/beertap" style="color:black;">Beer Tap</a>
+      <a href="/mywriting" style="color:black;">작성글</a>
+      <a href="#" style="color:black;">스크랩</a>
+      <a href="/mypage" style="color:black;">info</a>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!--본문-->
+<div class="bodywrapper">
+<div class="container">
+  <div class="align">
+    
+<h1 id="title" style="margin-bottom:0;"><%= @post.title %></h1>
+
+<div id="like"><%= @post.likes.size %>명이 좋아합니다.</div>
+
+<div><%= image_tag("#{@post.image}") %></div>
+<p id="content">
+  <%= @post.content %>
+</p>
+
+<p>
+  <% if current_user.is_like? (@post) %>
+  <form action='/post/<%= @post.id %>/like' method='post'>
+    <div class="button" style="background-color:#db5353"><button style="border:0; margin:0; background:transparent;background-color:#db5353; text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;">좋아요 취소</button></div> <br>
+  </form>
+  
+  <% else %>
+  <form action='/post/<%= @post.id %>/like' method='post'>
+    <div class="button" style="background-color:#db5353"><button style="border:0; margin:0; background:transparent;background-color:#db5353; text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;">좋아요</button></div> <br>
+  </form>
+<% end %>
+<div class="button">
+<%= link_to 'Edit', edit_post_path(@post), style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+</div>
+<br>
+<div class="button">
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+</div>
+<br>
+<div class="button">
+<%= link_to 'Back', beertap_url, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+</div>
+
+</p>
+</div>
+</div>
+</div>
+<div class="footer">ⓒ 2018  Beer SNS</div>
+</body>
+</html>

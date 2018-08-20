@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <body>
+<p id="notice"><%= notice %></p>
+
+<div class="wrapper">
+<div class="logo"><a href="index"><image src="/logo_a.png" class="main"></image></a></div>
+<ul class="tnb">
+  <li class="log">
+     <% if user_signed_in? %>
+     <%= link_to "Logout", destroy_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% else %>
+    <%= link_to "Login", new_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% end %>
+    </li>
+</ul>
+</div>
+
+<!--상단바-->
+     <ul class="nav">
+       <div class="menu">
+        <li><a class="active" href="beer">Beer</a></li>
+        <li><a href="brewery">Brewery</a></li>
+        <li><a href="#contact">Communication</a></li>
+        
+        <li class="dropdown">
+    <a href="mypage" class="dropbtn">My Page</a>
+    <div class="dropdown-content">
+      <a href="beertap" style="color:black;">Beer Tap</a>
+      <a href="#" style="color:black;">작성글</a>
+      <a href="#" style="color:black;">스크랩</a>
+      <a href="mypage" style="color:black;">info</a>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!--본문-->
+<div class="bodywrapper">
+<div class="container">
+  <div class="align">
+<h1>New Post</h1>
+
+<%= render 'form' %><br>
+<div class="button">
+<%= link_to 'Back', posts_path, style:"font: 400 13.3333px Arial; text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">ⓒ 2018  Beer SNS</div>
+</body>
+</html>

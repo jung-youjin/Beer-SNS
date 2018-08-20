@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+  
+  <body>
+<p id="notice"><%= notice %></p>
+
+<div class="wrapper">
+<div class="logo"><a href="index"><image src="/logo_a.png" class="main"></image></a></div>
+<ul class="tnb">
+  <li class="log">
+     <% if user_signed_in? %>
+     <%= link_to "Logout", destroy_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% else %>
+    <%= link_to "Login", new_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% end %>
+    </li>
+</ul>
+</div>
+
+<!--상단바-->
+     <ul class="nav">
+       <div class="menu">
+        <li><a class="active" href="beer">Beer</a></li>
+        <li><a href="brewery">Brewery</a></li>
+        <li><a href="community">Community</a></li>
+        
+        <li class="dropdown">
+    <a href="mypage" class="dropbtn">My Page</a>
+    <div class="dropdown-content">
+      <a href="beertap" style="color:black;">Beer Tap</a>
+      <a href="#" style="color:black;">작성글</a>
+      <a href="#" style="color:black;">스크랩</a>
+      <a href="mypage" style="color:black;">info</a>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!--본문-->
+<div class="bodywrapper">
+<div class="container">
+ 
+  <div class="survey">
+    <form class="search" action="#">
+        <input type="text" placeholder="Search" name="search" class="beer_search">
+        <input type="submit" value="SUBMIT" class="beer-page-submit">
+    </form> 
+  </div>
+
+  
+  <form name="Survey" method="get" action="">
+      <div class="survey">  
+        <p>
+            <label for="Alcohol">도수</label> <br>
+            <input type="checkbox" name="Alcohol" value=1> 4도 이하
+            <input type="checkbox" name="Alcohol" value=2> 6도 이하
+            <input type="checkbox" name="Alcohol" value=3> 8도 이하
+            <input type="checkbox" name="Alcohol" value=4> 10도 이하
+            <input type="checkbox" name="Alcohol" value=5> 10도 이상
+        </p>
+    
+        <p>
+            <label for="Fruit">과일향</label> <br>
+            <input type="checkbox" name="Fruit" value=1> 유
+            <input type="checkbox" name="Fruit" value=2> 무
+        </p>
+    
+        <p>
+            <label for="IBU">쓴 맛(IBU기준)</label> <br>
+            <input type="checkbox" name="IBU" value=1> 0-20
+            <input type="checkbox" name="IBU" value=2> 21-40
+            <input type="checkbox" name="IBU" value=3> 41-60
+            <input type="checkbox" name="IBU" value=4> 61-80
+            <input type="checkbox" name="IBU" value=5> 81-100
+        </p>
+        
+        <input type="submit" value="SUBMIT" class="beer-page-submit">
+        </div>
+    
+    
+
+  </form>
+
+
+
+  <h2 style="text-align:left; padding-left: 10px;">Beer Profile</h2>
+  
+  <div class="beer_card">
+    <h1>라 구달 아이이피에이</h1>
+    <p class="beer_title">인디아 페일 에일</p>
+    <p>7.2도</p>
+  </div>
+
+
+</div>
+</div>
+<!--<div class="footer">ⓒ 2018  Beer SNS</div>-->
+</body>
+</html>

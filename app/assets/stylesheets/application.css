@@ -1,0 +1,430 @@
+@font-face { font-family: 'SangSangAnt'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/SangSangAnt.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'WONDotum'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/WONDotum.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+
+html{
+    height:100%;
+}
+
+/*로고 사진 크기 조절*/
+.main{
+    width:40%;
+}
+
+/*헤더 부분*/
+.wrapper{
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 980px;
+  zoom: 1;
+}
+
+/*로고 이미지*/
+.logo{
+      padding: 6px 0 16px;
+    text-align: center;
+}
+
+/*로그인 버튼 위치 조절*/
+.tnb{
+  position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+/*본문*/
+.bodywrapper{
+    margin: 0 auto;
+    width: 980px;
+}
+
+.container{
+  width: 980px;
+    min-height: 350px;
+    height: auto !important;
+    background-color:rgb(127, 128, 130,0.5);
+    position: relative;
+    float: left;
+    height:auto !important;
+}
+
+body{
+    background-image:url(/bb.png);
+    display:block;
+    margin:8px;
+    height:100%;
+}
+
+/*상단바*/
+ul.nav {
+    list-style-type: none;
+    margin: -1px 0 15px;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav li a{
+  font-size:15px;
+    display: block;
+    flex-direction: row;
+    color: #d1cabc;
+    text-align: center;
+    padding: 14px 88px;
+    text-decoration: none;
+font-family: 'WONDotum';
+font-weight: bold;
+}
+
+.log {
+    display: inline-flex;
+}
+
+.nav li a:hover {
+    background-color:dimgray;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;li
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*마이페이지*/
+/*로그인*/ /*회원가입*/
+#icon{
+  width: 40%;
+  margin:0 auto;
+}
+.align{
+  text-align:center;
+  width: 100%;
+    max-width: 880px;
+    padding: 15px;
+    margin: auto;
+}
+
+.input{
+  width: 100%;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #495057;
+    cursor: text;
+    border: 1px solid transparent;
+    border-radius: .55rem;
+        height: 2.15rem;
+}
+
+.field{
+  margin-bottom: 1rem
+}
+/*내정보*/
+.type{
+    text-align:center;
+    font-family: 'WONDotum';
+    color: #f7b665;
+    font-size: 15px;
+}
+.name{
+    text-align:center;
+    color: #f9edde;
+    font-family: 'SangSangAnt';
+    font-size: 45px;
+}
+
+.footer{
+    text-align: center;
+    font-family: 'SangSangAnt';
+    color: #e5d7c5;
+    position: relative;
+    margin: 0 auto;
+    width: 980px;
+    height: 100px;
+    
+}
+
+.button{
+  background-color:#1b2e4c; width:200px;
+  margin:0 auto;
+  border-radius: .75rem;
+  height: 1.55rem;
+}
+
+input[type=submit]{
+   background-color:#1b2e4c; width:200px;
+  margin:0 auto;
+  border-radius: .75rem;
+  height: 1.55rem;
+  border-width:0px;
+}
+
+/*비어탭*/
+.title{
+color:#e5d7c5;
+font-family: 'WONDotum';
+    font-size: 2em;
+}
+#title{
+  font-family: 'WONDotum';
+  color:#e5d7c5;
+  font-size:30px;
+}
+.information{
+  padding:0 80px 40px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+
+.information a{
+  margin:20px auto;
+  height:130%;
+}
+
+#like{
+  color:#db5353;
+  font-family: 'SangSangAnt';
+  font-size: 23px;
+}
+
+#content{
+  font-family: 'WONDotum';
+  color:#1c1207;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*index 페이지*/
+.grid-container {
+  width:980px;
+  height: 320px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.ranking{
+  background-color:#e5a0c5;
+}
+
+.review{
+  background-color:#7aabf9;
+}
+
+/*img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 45vw;
+}*/
+
+
+
+/*slideshow styles*/
+
+
+.slideshow {
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: solid 1px white;
+  background-color:#e5dea0;
+}
+
+.show{
+  width: 980px;
+  height: auto;
+  display: inline-block;
+}
+
+.slideshow-container {
+  width: 3920px;
+  font-size: 0;
+  transition: 1s ease;
+  height: 490px;
+}
+
+.slideshow-container:hover {
+  animation-play-state: paused;
+}
+
+
+
+.slide {
+  animation: slide 24s ease infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  12.5% {
+    transform: translateX(0%);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  37.5% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  62.5% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-75%);
+  }
+
+  87.5% {
+    transform: translateX(-75%);
+  }
+
+  99% {
+    transform: translateX(-75%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*community 메인창*/
+.container-community {
+  text-align:center;
+  
+}
+
+
+/*beer 페이지*/
+
+  .survey{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+    color: rgb(210, 201, 201);
+    line-height:1.5em;
+    text-align: center;
+    border-radius: 5px;
+    border: 3px solid rgb(051, 051, 051);
+    padding: 40px;
+    margin: 20px;
+  }
+
+  .survey label {
+    font-weight: bold;
+  }
+
+  .search{
+    display: inline-block;
+  }
+
+  .beer_search {
+    display: block;
+    width: 600px;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    background-clip: padding-box;
+  }
+
+  .beer_card {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .beer_title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  .beer-page-submit {
+    background-color:#1b2e4c; 
+    width: 199px;
+    margin:0 auto;
+    border-radius: .75rem;
+    height: 1.55rem;
+    border-width:0px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.25rem;
+  }
+  
+
+
+/*community 페이지 */
+
+.operator_menu {
+  list-style: none;
+  width: 200px;
+}
+
+.user_menu {
+  list-style: none;
+  width: 200px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+a {
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.post-box {
+  float: right;
+  color: white;
+}

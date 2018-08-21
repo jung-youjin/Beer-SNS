@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180820125935) do
+ActiveRecord::Schema.define(version: 20180821074655) do
+
+  create_table "breweryposts", force: :cascade do |t|
+    t.text     "name"
+    t.text     "tab"
+    t.text     "bottlebeer"
+    t.string   "storeimage"
+    t.string   "menuimage"
+    t.text     "event"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float    "x"
+    t.float    "y"
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer  "post_id"

@@ -1,0 +1,56 @@
+<%= form_for(@brewerypost) do |f| %>
+  <% if @brewerypost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brewerypost.errors.count, "error") %> prohibited this brewerypost from being saved:</h2>
+
+      <ul>
+      <% @brewerypost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :tab %><br>
+    <%= f.text_area :tab %>
+  </div>
+  <div class="field">
+    <%= f.label :bottlebeer %><br>
+    <%= f.text_area :bottlebeer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :storeimage %>
+    <%= f.file_field :storeimage, accept: 'image/*'%><br>
+  </div>
+  
+  <div class="field">
+    <%= f.label :menuimage %>
+    <%= f.file_field :menuimage, accept: 'image/*'%><br>
+  </div>
+  
+  <div class="field">
+    <%= f.label :event %><br>
+    <%= f.text_area :event %>
+  </div>
+  
+
+  
+  <div class="field">
+    <%= f.hidden_field :x, id: :brewerypost_x , step: :any, value: @lat%>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :y, id: :brewerypost_y , step: :any, value: @lng%>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit("브루어리 정보 등록하기!") %>
+  </div>
+<% end %>

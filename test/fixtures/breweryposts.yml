@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  tab: MyText
+  bottlebeer: MyText
+  storeimage: MyString
+  menuimage: MyString
+  event: MyText
+
+two:
+  name: MyText
+  tab: MyText
+  bottlebeer: MyText
+  storeimage: MyString
+  menuimage: MyString
+  event: MyText

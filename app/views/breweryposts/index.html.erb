@@ -44,13 +44,70 @@
   </li>
 </ul>
 
+
+
+
 <!--본문-->
-<div class="bodywrapper">
-<div class="container">
+<div class="bodywrapper-brewery">
+<div class="container1">
+  
+  <p id="notice"><%= notice %></p>
+
+<h1 style="font-family: 'SangSangAnt';">Listing Breweryposts</h1>
+
+<div class="testposts">
+<table style="font-family: 'SangSangAnt';">
+  <thead>
+    <tr>
+      <th style=>Name</th>
+      <th>Tab</th>
+      <th>Bottlebeer</th>
+      <th>Storeimage</th>
+      <th>Menuimage</th>
+      <th>Event</th>
+      <th>X</th>
+      <th>Y</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @breweryposts.each do |brewerypost| %>
+      <tr>
+        <td><%= brewerypost.name %></td>
+        <td><%= brewerypost.tab %></td>
+        <td><%= brewerypost.bottlebeer %></td>
+        <td><%= brewerypost.storeimage %></td>
+        <td><%= brewerypost.menuimage %></td>
+        <td><%= brewerypost.event %></td>
+        <td><%= brewerypost.x %></td>
+        <td><%= brewerypost.y %></td>
+        <td><%= link_to 'Show', brewerypost %></td>
+        <td><%= link_to 'Edit', edit_brewerypost_path(brewerypost) %></td>
+        <td><%= link_to 'Destroy', brewerypost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>
+<br><br>
+<div>
+  <a style="font-family: 'SangSangAnt'; font-size: 30px;">지도 위에 브루어리를 추가하고자하는 위치를 눌러주세요!</a>
+</div>
+<div class="map-posts"></div>
+<br><br>
+  
+<div class="container2">  
 <div id="map"></div>
-<!--script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArXEvyWLOJs-JGPMjqpTSRMYgVyol8dX8"></script-->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArXEvyWLOJs-JGPMjqpTSRMYgVyol8dX8"></script>
 <script>
-        var seoul = {lat: 37.557216,lng: 126.987319};
+
+      var seoul = {lat: 37.557216,lng: 126.987319};
+        
         var smap = new google.maps.Map(document.getElementById('map'),{
             zoom: 12,
             center: seoul
@@ -76,33 +133,39 @@
           infowindow.open(smap,marker2);
         });
         
-        var markers = [];      
-  <% @posts .each do |post| %>
+        var markers = [];
+  
+
+        
+  <% @breweryposts .each do |post| %>
   var marker = new google.maps.Marker({
     position: {lat: <%= post.x %>, lng: <%= post.y %>},
     map: smap,
-    title: "<%= post.title %>",
-    icon: "<%= asset_path 'foodTruck2.png' %>"
+    title: "<%= post.name %>",
+    label: "<%= post.name %>",
+    icon: "<%= asset_path 'beer2.png' %>"
   });
   marker.addListener('click', function(){
     console.log("hello");
     $.ajax({
-      url: "/posts_ajax/"+<%= post.id %>
+      url: "/breweryposts_ajax/"+<%= post.id %>
     });
   })
-  console.log(<%=post.x%>);
+  //console.log(<%#=post.x%>);
   marker.setMap(smap);
 
 
   var beforMarker;
   google.maps.event.addListener(smap, 'click', function(event) {
     console.log("hi");
-    var contentString = "<div><a href='/posts/new/"+event.latLng.lat().toString().replace(".","a")+"/"+event.latLng.lng().toString().replace(".","a")+"'>브루어리 추가!</a></div>";
-/*      var marker = new google.maps.InfoWindow({
+  
+    var contentString = "<div><a href='/breweryposts/new/"+event.latLng.lat().toString().replace(".","a")+"/"+event.latLng.lng().toString().replace(".","a")+"'>브루어리 추가!</a></div>";
+
+  /*      var marker = new google.maps.InfoWindow({
     position: {lat: 37.55628, lng: 126.93694};
   }); */
   //  <%#= @lat %> = event.latLng.lat();
-    console.log(event.latLng.lat());
+    console.log(event.latLng.lng());
     
       
     var marker = new google.maps.Marker({
@@ -115,12 +178,15 @@
     console.log("zzz");
 
     infowindow.open(smap,marker);
+    console.log("infowindow open marker");
 
   });
   <%end%>      
 $()
 
+
 </script>
+</div>
 </div>
 </div>
 <!--<div class="footer">ⓒ 2018  Beer SNS</div>-->

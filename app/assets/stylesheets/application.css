@@ -403,9 +403,12 @@ font-family: 'WONDotum';
 
 /*community 페이지 */
 
+.commu_menu {
+  float: left;
+}
+
 .operator_menu {
   list-style: none;
-  width: 200px;
 }
 
 .user_menu {
@@ -426,5 +429,26 @@ a {
 
 .post-box {
   float: right;
+  width: 800px;
+  border-color: white;
   color: white;
+  /*margin: 10 0 0 0 0;*/
+  padding: 0 500 0 0;
+}
+
+.community_box {
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.commu_search {
+  margin: auto;
+  display: inline-block;
+  }
+  
+.bodywrapper-brewery {
+    background-color: rgba(255,255,255,0.3);
+    
 }

@@ -39,11 +39,10 @@
 
 <!--본문-->
 
-<div class="bodywrapper">
-<div class="container-community">
+<div class="community_box">
  
 
-<div class = "search">
+<div class = "commu_search">
     <%= form_tag search_post_path do %>
     <%= label_tag :search, "해시태그 검색" %>
     <%= text_field_tag :search %>
@@ -51,6 +50,9 @@
     <%end%>
 </div>
 
+<br>
+
+<div class= commu_menu>
   <ul class="operator_menu">
         <li><a href="#">공지사항</a></li>
         <li><a href="#">맥린이 게시판</a></li>
@@ -70,7 +72,7 @@
         <li><a href="#">맥주 공방</a></li>
         <li><a href="#">맥주 페스티벌 스태프</a></li>
       </ul>
-      
+    </div>  
       
 
 
@@ -105,7 +107,7 @@
 
 
 </div>
-</div>
-<div class="footer">ⓒ 2018  Beer SNS</div>
+
+<!--<div class="footer">ⓒ 2018  Beer SNS</div>-->
 </body>
 </html>

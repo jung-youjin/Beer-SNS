@@ -45,6 +45,10 @@ class BrewerypostsController < ApplicationController
 
   # GET /breweryposts/1/edit
   def edit
+    @beerdbs = Beerdb.all
+    @beerdb = Beerdb.new(name: '뭐지')
+    @beerdbs = Beerdb.select(:name).distinct
+    @beerdb = Beerdb.find(1)
   end
 
   # POST /breweryposts

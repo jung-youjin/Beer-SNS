@@ -35,17 +35,17 @@
 
 
   <div class="field">
-    <a><%= f.label :storeimage %></a><br>
-    <%= f.text_field :storeimage, accept: 'image/*' %>
+    </a><%= f.label :storeimage %></a>
+    <%= f.file_field :storeimage, accept: 'image/*'%><br>
   </div>
   
   <div class="field">
-    <a><%= f.label :menuimage %></a><br>
-    <%= f.text_field :menuimage, , accept: 'image/*' %>
+    <a><%= f.label :menuimage %></a>
+    <%= f.file_field :menuimage, accept: 'image/*'%><br>
   </div>
   
   <div class="field">
-    <%= f.label :event %><br>
+    <a><%= f.label :event %></a><br>
     <%= f.text_area :event %>
   </div>
   

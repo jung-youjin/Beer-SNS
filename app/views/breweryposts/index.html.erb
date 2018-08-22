@@ -52,8 +52,10 @@
 <div class="container1">
   
   <p id="notice"><%= notice %></p>
+  
+  <a style="font-family: 'SangSangAnt'; font-size: 40px;, color:red;">※ 지도가 로딩이 안되는 경우, 페이지를 새로고침 시켜주세요!</a>
 
-<h1 style="font-family: 'SangSangAnt';">Listing Breweryposts</h1>
+<h1 style="font-family: 'SangSangAnt';">Listing Breweryposts(필요없으니 나중에 빼기)</h1>
 
 <div class="testposts">
 <table style="font-family: 'SangSangAnt';">
@@ -96,7 +98,8 @@
 </div>
 <br><br>
 <div>
-  <a style="font-family: 'SangSangAnt'; font-size: 30px;">지도 위에 브루어리를 추가하고자하는 위치를 눌러주세요!</a>
+  <a style="font-family: 'SangSangAnt'; font-size: 30px;">지도 위에 브루어리를 추가하고자하는 위치를 눌러주세요!</a><br>
+  <a style="font-family: 'SangSangAnt'; font-size: 30px;">지도 위에 있는 브루어리를 클릭하여 정보를 확인하세요!!</a>
 </div>
 <div class="map-posts"></div>
 <br><br>
@@ -113,25 +116,25 @@
             center: seoul
             
         });
+         /* edit하면 lat,lng값 날라감 */
         
-        
-        var first =  {lat: 37.4987493,lng: 126.9954321};
+        //var first =  {lat: 37.4987493,lng: 126.9954321};
         //var second = {lat: 37.5567904,lng: 126.973718};
-        var second = new google.maps.LatLng(37.5567904,126.973718);
-        var marker1 = new google.maps.Marker({position: first,title: "크래프트 브로스", label: "크래프트 브로스", map: smap, icon:'beer2.png'});
-        var marker2 = new google.maps.Marker({position: second, label: "아트 몬스터", map: smap, icon:'beer2.png'});
+        //var second = new google.maps.LatLng(37.5567904,126.973718);
+        //var marker1 = new google.maps.Marker({position: first,title: "크래프트 브로스", label: "크래프트 브로스", map: smap, icon:'beer2.png'});
+        //var marker2 = new google.maps.Marker({position: second, label: "아트 몬스터", map: smap, icon:'beer2.png'});
 
-        var infowindow = new google.maps.InfoWindow({
+        /*var infowindow = new google.maps.InfoWindow({
             content: "Brewery"
-        });
+        });*/
         
-        marker1.addListener('click', function() {
+        /*marker1.addListener('click', function() {
           infowindow.open(smap,marker1);
-        });
+        });*/
         
-        marker2.addListener('click', function() {
+       /* marker2.addListener('click', function() {
           infowindow.open(smap,marker2);
-        });
+        });*/
         
         var markers = [];
   
@@ -143,7 +146,9 @@
     map: smap,
     title: "<%= post.name %>",
     label: "<%= post.name %>",
-    icon: "<%= asset_path 'beer2.png' %>"
+      
+    icon: "<%= asset_path 'beer2.png' %>",
+    
   });
   marker.addListener('click', function(){
     console.log("hello");
@@ -181,6 +186,9 @@
     console.log("infowindow open marker");
 
   });
+
+  
+  
   <%end%>      
 $()
 

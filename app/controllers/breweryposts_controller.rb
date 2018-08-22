@@ -21,9 +21,7 @@ class BrewerypostsController < ApplicationController
     
     #@brewerypost.x = params[:lat]
     #@brewerypost.y = params[:lng]
-   
-    
-    
+  
   end
   
   def ajaxIndex

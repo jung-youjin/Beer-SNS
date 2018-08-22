@@ -43,15 +43,19 @@ class PostsController < ApplicationController
     render 'index'
   end
   
+  def mywriting
+    @posts = Post.all
+  end
+  
   def community
     @posts = Post.all
   end
   
-#  def brewery
-#    @posts = Post.all
-#    @lat = params[:lat]#.sub("a",".")
-#    @lng = params[:lng]#.sub("a",".")
-#  end
+  def brewery
+    @posts = Post.all
+    @lat = params[:lat].sub("a",".")
+    @lng = params[:lng].sub("a",".")
+  end
   
   def brewery_new
     @posts = Post.new

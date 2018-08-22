@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :breweryposts
   devise_for :users
   resources :posts
+  resources :breweryposts
   
   root 'posts#index'
 
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   get 'posts/mypage/index' => 'posts#index'
   get 'posts/mypage/beertap' => 'posts#beertap'
   get 'posts/mypage/community' => 'posts#community'
-  get 'posts/mypage/brewery' => 'breweryposts#index'
   
   get 'users/index' => 'posts#index'
   get 'users/mypage' => 'posts#mypage'
@@ -34,6 +33,8 @@ Rails.application.routes.draw do
   
   get 'users/show/index' => 'posts#index'
   get 'users/show/beertap' => 'posts#beertap'
+  
+  get 'users/mywriting' => 'posts/mywriting'
   
   post 'posts/search' => 'posts#search', as: 'search_post'
   

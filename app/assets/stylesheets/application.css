@@ -444,11 +444,17 @@ a {
 
 
 .commu_search {
-  margin: auto;
+  position: absolute;
+  left: 38%;
   display: inline-block;
+  color: white;
   }
   
 .bodywrapper-brewery {
     background-color: rgba(255,255,255,0.3);
     
+}
+
+.map-label {
+  font-family: 'SangSangAnt';
 }

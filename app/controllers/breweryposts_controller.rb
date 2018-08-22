@@ -5,7 +5,12 @@ class BrewerypostsController < ApplicationController
   # GET /breweryposts.json
   def index
     @breweryposts = Brewerypost.all
+    @beerdbs = Beerdb.all
+    @beerdb = Beerdb.new(name: '뭐지')
+    @beerdbs = Beerdb.select(:name).distinct
+    @beerdb = Beerdb.find(1)
   end
+  
 
   # GET /breweryposts/1
   # GET /breweryposts/1.json
@@ -21,6 +26,11 @@ class BrewerypostsController < ApplicationController
     
     #@brewerypost.x = params[:lat]
     #@brewerypost.y = params[:lng]
+    @beerdbs = Beerdb.all
+    @beerdb = Beerdb.new(name: '뭐지')
+    @beerdbs = Beerdb.select(:name).distinct
+    
+    @beerdb = Beerdb.find(1)
   
   end
   
@@ -85,6 +95,6 @@ class BrewerypostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brewerypost_params
-      params.require(:brewerypost).permit(:name, :tab, :bottlebeer, :storeimage, :menuimage, :event, :x, :y)
+      params.require(:brewerypost).permit(:name, :tab, :bottlebeer, :storeimage, :menuimage, :event, :x, :y, :beerdb_name)
     end
 end

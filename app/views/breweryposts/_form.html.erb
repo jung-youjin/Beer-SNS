@@ -12,26 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <a><%= f.label :name %></a><br>
     <%= f.text_area :name %>
-  </div>
-  <div class="field">
-    <%= f.label :tab %><br>
-    <%= f.text_area :tab %>
-  </div>
-  <div class="field">
-    <%= f.label :bottlebeer %><br>
-    <%= f.text_area :bottlebeer %>
-  </div>
-
-  <div class="field">
-    <%= f.label :storeimage %>
-    <%= f.file_field :storeimage, accept: 'image/*'%><br>
   </div>
   
   <div class="field">
-    <%= f.label :menuimage %>
-    <%= f.file_field :menuimage, accept: 'image/*'%><br>
+    <%= field_set_tag '비어명 선택' do %>
+      <a>Tab:</a> <%= f.collection_select :tab, @beerdbs, :name, :name %>
+        <%#= form_for(@beerdb) do |p| %>
+          <%#= p.collection_select :brewerypost_tab, @beerdbs, :name, :name, {:prompt=>true} %>
+        <%#end%>
+    <%end%>
+  </div>
+  <div class="field">
+    <%= field_set_tag '비어명 선택' do %>
+      <a>Tab:</a> <%= f.collection_select :bottlebeer, @beerdbs, :name, :name %>
+        <%#= form_for(@beerdb) do |p| %>
+          <%#= p.collection_select :brewerypost_tab, @beerdbs, :name, :name, {:prompt=>true} %>
+        <%#end%>
+    <%end%>
+  </div>
+
+
+  <div class="field">
+    <a><%= f.label :storeimage %></a><br>
+    <%= f.text_field :storeimage, accept: 'image/*' %>
+  </div>
+  
+  <div class="field">
+    <a><%= f.label :menuimage %></a><br>
+    <%= f.text_field :menuimage, , accept: 'image/*' %>
   </div>
   
   <div class="field">

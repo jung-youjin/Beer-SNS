@@ -47,6 +47,7 @@ html{
     position: relative;
     float: left;
     height:auto !important;
+    margin:auto;
 }
 
 body{

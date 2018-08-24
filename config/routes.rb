@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
+
+  resources :reviews
+  resources :information
+  resources :promotions
+  resources :qnas
+  resources :mcmillies
+  resources :enjoyings
+  resources :mcjals
+  resources :mcleans
   devise_for :users
   resources :posts
   resources :breweryposts
   resources :beerdbs
+  resources :notices
   
   root 'posts#index'
 
@@ -21,6 +31,8 @@ Rails.application.routes.draw do
   get 'posts/mypage/beertap' => 'posts#beertap'
   get 'posts/mypage/community' => 'posts#community'
   get 'posts/mypage/brewery' => 'breweryposts#index'
+  
+  get 'posts/service' => 'posts#service'
   
   get 'users/index' => 'posts#index'
   get 'users/mypage' => 'posts#mypage'
@@ -44,6 +56,12 @@ Rails.application.routes.draw do
   
   get 'breweryposts_ajax/:brewerypost_id' => 'breweryposts#ajaxIndex'
 
+  post 'posts/beersearchsim' => 'posts#beersearchsim', as:'beersearchsim_post'
+  post 'posts/beersearchspec' => 'posts#beersearchspec', as: 'beersearchspec_post'
+  get 'posts/beermore/:beerdbs_id' => 'posts#beermore', as: 'beermore'
+  get 'home/showtable' => 'home#showtable'
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

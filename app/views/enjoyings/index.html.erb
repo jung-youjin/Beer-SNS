@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Enjoyings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Review count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enjoyings.each do |enjoying| %>
+      <tr>
+        <td><%= enjoying.email %></td>
+        <td><%= enjoying.title %></td>
+        <td><%= enjoying.content %></td>
+        <td><%= enjoying.review_count %></td>
+        <td><%= link_to 'Show', enjoying %></td>
+        <td><%= link_to 'Edit', edit_enjoying_path(enjoying) %></td>
+        <td><%= link_to 'Destroy', enjoying, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Enjoying', new_enjoying_path %>

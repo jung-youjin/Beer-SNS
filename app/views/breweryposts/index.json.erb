@@ -1,2 +1,2 @@
-$(".map-posts").html("<div><%= @brewerypost.name%></div><div><%= @brewerypost.tab%></div><div><%= @brewerypost.bottlebeer%></div><div><img src='<%= @brewerypost.storeimage %>'></div><div><img src='<%= @brewerypost.menuimage %>'></div><div><%= @brewerypost.event %></div>").hide().fadeIn(500);
+$(".map-posts").html("<div><a>매장명</a><br><%= @brewerypost.name%></div><a>보유 탭</a><br><div><%= @brewerypost.tab%></div><a>보유 바틀비어</a><br><div><%= @brewerypost.bottlebeer%></div><a>매장 사진</a><div><img src='<%= @brewerypost.storeimage %>'></div><a>메뉴 사진</a><br><div><img src='<%= @brewerypost.menuimage %>'></div><a>이벤트</a><br><div><%= @brewerypost.event %></div>").hide().fadeIn(500);
 

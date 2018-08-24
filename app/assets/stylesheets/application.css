@@ -22,8 +22,9 @@ html{
 
 /*로고 이미지*/
 .logo{
+  display: block;
       padding: 6px 0 16px;
-    text-align: center;
+     text-align: center;
 }
 
 /*로그인 버튼 위치 조절*/
@@ -37,6 +38,7 @@ html{
 .bodywrapper{
     margin: 0 auto;
     width: 980px;
+
 }
 
 .container{
@@ -48,6 +50,7 @@ html{
     float: left;
     height:auto !important;
     margin:auto;
+    text-align:center;
 }
 
 body{
@@ -78,7 +81,7 @@ ul.nav {
     text-align: center;
     padding: 14px 88px;
     text-decoration: none;
-font-family: 'WONDotum';
+  font-family: 'WONDotum';
 font-weight: bold;
 }
 
@@ -106,7 +109,7 @@ li.dropdown {
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
-    text-decoration: none;li
+    text-decoration: none;
     display: block;
     text-align: left;
 }
@@ -248,7 +251,7 @@ font-family: 'WONDotum';
 }
 
 .review{
-  background-color:#7aabf9;
+  background-color: rgb(051, 051, 051);
 }
 
 /*img{
@@ -429,13 +432,15 @@ a {
 }
 
 .post-box {
-  float: right;
-  width: 800px;
+  float: left;
+  width: 500px;
   border-color: white;
   color: white;
   /*margin: 10 0 0 0 0;*/
-  padding: 0 500 0 0;
+  /*padding: 0 800 0 0;*/
 }
+
+
 
 .community_box {
   width: 1400px;
@@ -458,4 +463,101 @@ a {
 
 .map-label {
   font-family: 'SangSangAnt';
+}
+
+.map-posts {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  background-image:url('yourimage.file');
+  background-color:#F7D358;
+  text-align: center;
+  font-family: 'SangSangAnt';
+  font-size: 1em;
+  
+}
+
+.brewery-info h3 {
+  display:block;
+  text-align: center;
+  font-family: 'Black Han Sans';
+  font-size: 35px;
+  color:#F7D358;
+    margin: 0 0 0 0 !important;
+
+}
+
+.brewery-welcome-image {
+  position:relative;
+}
+
+.style1 {
+  font-family: 'Do Hyeon';
+
+  
+}
+.brewery-info a {
+  display:block;
+  text-align: center;
+}
+
+/*neon-sign*/
+
+
+.logos {
+  text-align: center;
+
+  margin: auto;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: 'Vibur';
+  display:block;
+  font-size:15px;
+
+}
+
+.logos b{
+  font-size: 20px;
+  font-family: "Sarala";
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #819FF7, 0 0 0.5em #819FF7, 0 0 0.1em #819FF7, 0 10px 3px #000;
+}
+.logos b span{
+  animation: blink linear infinite 2s;
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #F7F2E0;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #F7F2E0;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #F7F2E0;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
 }

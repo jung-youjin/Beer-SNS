@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mcjals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Review count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mcjals.each do |mcjal| %>
+      <tr>
+        <td><%= mcjal.email %></td>
+        <td><%= mcjal.title %></td>
+        <td><%= mcjal.content %></td>
+        <td><%= mcjal.review_count %></td>
+        <td><%= link_to 'Show', mcjal %></td>
+        <td><%= link_to 'Edit', edit_mcjal_path(mcjal) %></td>
+        <td><%= link_to 'Destroy', mcjal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mcjal', new_mcjal_path %>

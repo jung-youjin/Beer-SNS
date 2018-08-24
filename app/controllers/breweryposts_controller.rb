@@ -84,6 +84,7 @@ class BrewerypostsController < ApplicationController
   # DELETE /breweryposts/1
   # DELETE /breweryposts/1.json
   def destroy
+    @brewerypost = Brewerypost.find(params[:id])
     @brewerypost.destroy
     respond_to do |format|
       format.html { redirect_to breweryposts_url, notice: 'Brewerypost was successfully destroyed.' }

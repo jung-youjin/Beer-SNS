@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<p>BEER DB 추가 완료!</p>
+
+<table style="color:white;">
+<thead>
+<tr>
+<th>ID</th>
+<th>NUM</th>
+<th>Name</th>
+<th>Brewery</th>
+<th>Style</th>
+<th>Alcohol</th>
+<th>Fruit</th>
+<th>IBU</th>
+<th>Text</th>
+</tr>
+</thead>
+<% @beerdbs.each do |beer| %>
+<tbody>
+<tr>
+    <td><%= beer.id %></td>
+    <td><%= beer.num %></td>
+    <td><%= beer.name %></td>
+    <td><%= beer.brewery %></td>
+    <td><%= beer.style %></td>
+    <td><%= beer.alcohol %></td>
+    <td><%= beer.fruit %></td>
+    <td><%= beer.ibu %></td>
+    <td><%= beer.text %></td>
+</tr>
+<%end%>
+</tbody>
+</table>
+
+</html>

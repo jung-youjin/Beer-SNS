@@ -22,4 +22,12 @@ class HomeController < ApplicationController
     i = i+1
     end
   end
+  
+  def showtable
+    @beerdbs = Beerdb.all
+
+  end
+  
+
+  
 end

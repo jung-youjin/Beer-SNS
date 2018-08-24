@@ -13,6 +13,8 @@ class PostsController < ApplicationController
             
       redirect_to :back
   end
+
+
   # GET /posts
   # GET /posts.json
   def index
@@ -38,11 +40,31 @@ class PostsController < ApplicationController
   def edit
   end
   
-  def search
-    @posts = Post.where(title: params[:search])
-    render 'index'
+  def beer
   end
   
+  def beersearchspec
+   #@beerdbs = Beerdb.all
+    #@beerdbs = Beerdb.where(name: params[:beersearchspec])
+  end
+  
+  def beermore
+    # @beerdbs = Beerdb.all
+  end
+  
+  def  beersearchsim
+    '''
+    @beerdbs = Beerdb.all
+    if params[:beersearchsim]
+    @beerdbs = Beerdb.beersearchsim(params[:beersearchsim])
+    else
+    @beerdbs = Beerdb.all
+     # @beerdbs = Beerdb.where(name: params[:beersearchsim])
+    end
+    '''
+  end
+
+
   def mywriting
     @posts = Post.all
   end
@@ -72,8 +94,10 @@ class PostsController < ApplicationController
     end
   end
 
+
   # POST /posts
   # POST /posts.json
+  
   def create
     @post = Post.new(post_params)
     respond_to do |format|
@@ -86,7 +110,7 @@ class PostsController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
@@ -100,7 +124,7 @@ class PostsController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
@@ -110,6 +134,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -121,4 +146,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :content, :image, :x, :y, :user_id)
     end
-end
+    
+  end

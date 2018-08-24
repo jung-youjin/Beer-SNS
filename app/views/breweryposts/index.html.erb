@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+       <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Do+Hyeon" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Vibur" rel="stylesheet">
+     <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="mystyle.css" type="text/css"/>
+
     <!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArXEvyWLOJs-JGPMjqpTSRMYgVyol8dX8"></script-->
     <style>
         #map {
@@ -48,71 +56,59 @@
 
 
 <!--본문-->
-<div class="bodywrapper-brewery">
+<div class="bodywrapper">
 <div class="container">
   
-  <p id="notice"><%= notice %></p>
-  
-  <a style="font-family: 'SangSangAnt'; font-size: 40px;, color:red;">※ 지도가 로딩이 안되는 경우, 페이지를 새로고침 시켜주세요!</a>
-  
-  
-  <%#= form_for(@beerdb) do |f| %>
-    
-    <%#= f.collection_select :name, @beerdbs, :name, :name %>
-  <%#end%>
-  
-  
-
-<h1 style="font-family: 'SangSangAnt';">Listing Breweryposts(필요없으니 나중에 빼기)</h1>
-
-<div class="testposts">
-<table style="font-family: 'SangSangAnt';">
-  <thead>
-    <tr>
-      <th style=>Name</th>
-      <th>Tab</th>
-      <th>Bottlebeer</th>
-      <th>Storeimage</th>
-      <th>Menuimage</th>
-      <th>Event</th>
-      <th>X</th>
-      <th>Y</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @breweryposts.each do |brewerypost| %>
-      <tr>
-        <td><%= brewerypost.name %></td>
-        <td><%= brewerypost.tab %></td>
-        <td><%= brewerypost.bottlebeer %></td>
-        <td><%= brewerypost.storeimage %></td>
-        <td><%= brewerypost.menuimage %></td>
-        <td><%= brewerypost.event %></td>
-        <td><%= brewerypost.x %></td>
-        <td><%= brewerypost.y %></td>
-        <td><%= link_to 'Show', brewerypost %></td>
-        <!--td><%#= link_to 'Edit', edit_brewerypost_path(brewerypost) %></td-->
-        <td><%= link_to 'Destroy', brewerypost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
-
+<div class="brewery-info">
+  <h3> BREWERY PAGE : HOW TO USE ?</h3>
+  <a>- - - - - W E L C O M E T O B R E W E R Y P A G E - - - - -<br></a>
+  </div>
+  <div id ="main">
+    
+	<section class="tiles" style="padding:10px;">
+								<article class="style1">
+									<span class="image">
+										<img src="brewery2.jpg" alt="" />
+									</span>
+									<a>
+									    <%#= (@beerdbs).each do |b| %>
+										<h2>BREWERY 정보 등록하기</h2>
+										<div class="content">
+											<p>등록하고자 하는 BREWERY의 위치를 지도 위에 클릭하여 BREWERY 정보를 등록하세요!</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="brewery6.jpg" alt="" />
+									</span>
+									<a>
+										<h2>BREWERY 정보 확인하기</h2>
+										<div class="content">
+											<p>확인하고자 하는 BREWERY의 마커를 클릭하여 BREWERY 정보를 확인하세요!</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="brewery7.jpg" alt="" />
+									</span>
+									<a>
+										<h2>BREWERY 지도가 안떠요!</h2>
+										<div class="content">
+											<p>그런 경우, BREWERY 페이지를 새로고침(F5)해주세요!</p>
+										</div>
+									</a>
+								</article>
+								</section>
 
 </div>
-<br><br>
-<div>
-  <a style="font-family: 'SangSangAnt'; font-size: 30px;">지도 위에 브루어리를 추가하고자하는 위치를 눌러주세요!</a><br>
-  <a style="font-family: 'SangSangAnt'; font-size: 30px;">지도 위에 있는 브루어리를 클릭하여 정보를 확인하세요!!</a>
-</div>
-<div class="map-posts"></div>
-<br><br>
+  </div>
+<br>
   
-<div class="container2">  
+<div class="container">  
+<div class="map-posts"></div><br>
 <div id="map"></div>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArXEvyWLOJs-JGPMjqpTSRMYgVyol8dX8"></script>
 <script>
@@ -202,7 +198,9 @@ $()
 
 
 </script>
+<br><br><br>
 </div>
+
 </div>
 </div>
 <!--<div class="footer">ⓒ 2018  Beer SNS</div>-->

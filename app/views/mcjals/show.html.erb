@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @mcjal.email %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mcjal.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @mcjal.content %>
+</p>
+
+<p>
+  <strong>Review count:</strong>
+  <%= @mcjal.review_count %>
+</p>
+
+<%= link_to 'Edit', edit_mcjal_path(@mcjal) %> |
+<%= link_to 'Back', mcjals_path %>

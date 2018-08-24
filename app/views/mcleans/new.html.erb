@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+  
+  <body>
+<p id="notice"><%= notice %></p>
+
+<div class="wrapper">
+<div class="logo"><a href="index"><image src="/logo_a.png" class="main"></image></a></div>
+<ul class="tnb">
+  <li class="log">
+     <% if user_signed_in? %>
+     <%= link_to "Logout", destroy_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% else %>
+    <%= link_to "Login", new_user_session_path, style:"text-decoration:none !important; color:#d1cabc; font-family: 'WONDotum'; font-weight:bold;" %>
+    <% end %>
+    </li>
+</ul>
+</div>
+
+<!--상단바-->
+     <ul class="nav">
+       <div class="menu">
+        <li><a class="active" href="/beer">Beer</a></li>
+        <li><a href="/brewery">Brewery</a></li>
+        <li><a href="/community">Community</a></li>
+        
+        <li class="dropdown">
+    <a href="/mypage" class="dropbtn">My Page</a>
+    <div class="dropdown-content">
+      <a href="/beertap" style="color:black;">Beer Tap</a>
+      <a href="#" style="color:black;">작성글</a>
+      <a href="#" style="color:black;">스크랩</a>
+      <a href="/mypage" style="color:black;">info</a>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!--본문-->
+<div class="bodywrapper">
+<div class="container">
+<div class="community_box">
+<!--side nav-->
+<div class= commu_menu>
+  <h2 id="header">Menu</h2>
+  <ul class="operator_menu">
+        <li><a href="notices">공지사항</a></li>
+        <li><a href="mcleans">맥린이 게시판</a></li>
+        <li><a href="mcjals">맥잘알 게시판</a></li>
+        <li><a href="enjoyings">즐기는 사람 게시판</a></li>
+        <li><a href="mcmillies">맥믈리에 게시판</a></li>
+        <li><a href="qnas">맥믈리에에게 질문합니다</a></li>
+        <li><a href="promotions">홍보 게시판</a></li>
+        <li><a href="information">정보 게시판</a></li>
+        <li><a href="reviews">브루어리 후기 게시판</a></li>
+    </ul>
+    
+    
+
+      <ul class="user_menu">
+        <li><a href="#">중고나라</a></li>
+        <li><a href="#">맥주 공방</a></li>
+        <li><a href="#">맥주 페스티벌 스태프</a></li>
+      </ul>
+    </div>  
+<!--끝    -->
+
+<!--우측 콘텐츠-->
+<div class="second_main">
+    
+    <h1 class="commu_title">공지사항 작성</h1>
+    
+    <!--<div class = "commu_search">-->
+    <!--<%= form_tag search_post_path do %>-->
+    <!--<%= label_tag :search, "해시태그 검색" %>-->
+    <!--<%= text_field_tag :search %>-->
+    <!--<%= submit_tag "검색하기!" %>-->
+    <!--<%end%>-->
+    <!--</div>-->
+
+    <div class="post-box">
+    
+        <h1>New Mclean</h1>
+        
+        <%= render 'form' %>
+        
+        <%= link_to 'Back', mcleans_path %>
+    
+    </div>
+    
+    </div>      
+
+</div>
+</div>
+</div>
+
+<!--<div class="footer">ⓒ 2018  Beer SNS</div>-->
+</body>
+</html>

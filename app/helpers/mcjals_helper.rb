@@ -1,0 +1,2 @@
+module McjalsHelper
+end

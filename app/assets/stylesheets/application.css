@@ -40,9 +40,10 @@ html{
     width: 980px;
 
 }
-
-.container{
-  width: 980px;
+ 
+  
+.container {
+    width: 980px;
     min-height: 350px;
     height: auto !important;
     background-color:rgb(127, 128, 130,0.5);
@@ -50,7 +51,7 @@ html{
     float: left;
     height:auto !important;
     margin:auto;
-    text-align:center;
+    /*text-align:center;*/
 }
 
 body{
@@ -241,13 +242,14 @@ font-family: 'WONDotum';
 /*index 페이지*/
 .grid-container {
   width:980px;
-  height: 320px;
-  display: grid;
-  grid-template-columns: auto auto;
+  /*height: 320px;*/
+  display: block;
+  /*grid-template-columns: auto auto;*/
 }
 
 .ranking{
-  background-color:#e5a0c5;
+  width:980px;
+  background-image: url("main_image1.jpg");
 }
 
 .review{
@@ -560,4 +562,74 @@ a {
     color: inherit;
     text-shadow: inherit;
   }
+}
+
+/*postindex 슬라이드 밑 부분*/
+.service1 {
+  width: 980px;
+  display: inline-block;
+}
+
+
+.service_container {
+  position: static;
+  width: 480px;
+}
+
+.service_image {
+  display: block;
+  /*position: relative;*/
+  /*width: 100%;*/
+  height: auto;
+}
+
+.service_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+
+.service_container:hover .overlay {
+  opacity: 1;
+}
+
+.service_text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+.mainimage1 {
+ 
+  position:relative;
+
+}
+.mainimage1_label  {
+  position:absolute;
+  z-index:+1;
+
 }

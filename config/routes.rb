@@ -56,9 +56,9 @@ Rails.application.routes.draw do
   
   get 'breweryposts_ajax/:brewerypost_id' => 'breweryposts#ajaxIndex'
 
-  post 'posts/beersearchsim' => 'posts#beersearchsim', as:'beersearchsim_post'
-  post 'posts/beersearchspec' => 'posts#beersearchspec', as: 'beersearchspec_post'
-  get 'posts/beermore/:beerdbs_id' => 'posts#beermore', as: 'beermore'
+  #post 'posts/beersearchsim' => 'posts#beersearchsim', as:'beersearchsim_post'
+  #post 'posts/beersearchspec' => 'posts#beersearchspec', as: 'beersearchspec_post'
+  #get 'posts/beermore/:beerdbs_id' => 'posts#beermore', as: 'beermore'
   get 'home/showtable' => 'home#showtable'
   
   

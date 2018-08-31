@@ -43,26 +43,26 @@ class PostsController < ApplicationController
   def beer
   end
   
-  def beersearchspec
+ # def beersearchspec
    #@beerdbs = Beerdb.all
-    #@beerdbs = Beerdb.where(name: params[:beersearchspec])
-  end
+   #@beerdbs = Beerdb.where(name: params[:beersearchspec])
+  #end
   
   def beermore
     # @beerdbs = Beerdb.all
   end
   
-  def  beersearchsim
+  #def  beersearchsim
     '''
-    @beerdbs = Beerdb.all
-    if params[:beersearchsim]
-    @beerdbs = Beerdb.beersearchsim(params[:beersearchsim])
-    else
-    @beerdbs = Beerdb.all
-     # @beerdbs = Beerdb.where(name: params[:beersearchsim])
+    #@beerdbs = Beerdb.all
+    #if params[:beersearchsim]
+    #@beerdbs = Beerdb.beersearchsim(params[:beersearchsim])
+    #else
+    #@beerdbs = Beerdb.all
+     #@beerdbs = Beerdb.where(name: params[:beersearchsim])
     end
     '''
-  end
+  #end
 
 
   def mywriting
@@ -147,4 +147,4 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :content, :image, :x, :y, :user_id)
     end
     
-  end
+end

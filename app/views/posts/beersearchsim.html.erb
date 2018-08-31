@@ -56,35 +56,21 @@
 <!--searchresult-->
 
                         <div class="innertitle">
-							<section class="tiles">
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
 									</span>
 									<div class="answer">
 									<%@beerdbs.each do |p|%>
 
    									맥주이름 : <%= p.name%><br>
    									스타일 : <%= p.style%><br>
-  								    도수 : <%= p.alcohol%><br>
+  								    도수 : <@= p.alcohol%><br>
   								    쓴 정도(ibu) : <%= p.alcohol%><br>
   								    과일향 유뮤 : <%= p.fruit%><br>
   								     <%#= link_to 'MORE', "/posts/beermore/#{beerdbs.id}"%><br>
   									<%end%>
-  									</div>
-								</section>
-							<% if @recipes.blank? %>
-                            <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
-                            <% end %>
+  								</div>
 
 							</div>
 						</div>
-					
-		<!-- Scripts -->
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/browser.min.js"></script>
-			<script src="/js/breakpoints.min.js"></script>
-			<script src="/js/util.js"></script>
-			<script src="/js/main.js"></script>
 
  
 
